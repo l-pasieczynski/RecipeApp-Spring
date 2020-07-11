@@ -1,3 +1,11 @@
+.idea/
+*.iml
+out/
+target/
+*.md
+*.cmd
+.mvn/
+
 # Compiled class file
 *.class
 
