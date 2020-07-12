@@ -2,9 +2,16 @@ package pl.cv.recipedietapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class RecipedietappApplication {
+public class RecipedietappApplication extends SpringBootServletInitializer {
+
+
+    protected SpringApplicationBuilder createSpringApplicationBuilder(SpringApplicationBuilder builder) {
+        return builder.sources(RecipedietappApplication.class);
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(RecipedietappApplication.class, args);
