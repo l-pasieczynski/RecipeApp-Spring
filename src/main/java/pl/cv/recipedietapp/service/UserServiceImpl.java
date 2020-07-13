@@ -1,6 +1,7 @@
 package pl.cv.recipedietapp.service;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
 import pl.cv.recipedietapp.entity.Role;
 import pl.cv.recipedietapp.entity.User;
 import pl.cv.recipedietapp.repository.RoleRepository;
@@ -9,6 +10,7 @@ import pl.cv.recipedietapp.repository.UserRepository;
 import java.util.Arrays;
 import java.util.HashSet;
 
+@Service
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
@@ -22,8 +24,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findByUserName(String username) {
-        return userRepository.findByUserName(username);
+    public User findByUsername(String username) {
+        return userRepository.findByUsername(username);
     }
 
     @Override

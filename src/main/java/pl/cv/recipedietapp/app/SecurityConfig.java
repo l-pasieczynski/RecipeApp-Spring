@@ -13,6 +13,7 @@ import pl.cv.recipedietapp.service.SpringDataUserDetailsService;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
@@ -22,7 +23,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().formLogin().loginPage("/login")
                 .and().logout().logoutSuccessUrl("/")
                 .permitAll()
-                .and().exceptionHandling().accessDeniedPage("/403");
+                .and().exceptionHandling().accessDeniedPage("/access-denied");
     }
 
     @Bean

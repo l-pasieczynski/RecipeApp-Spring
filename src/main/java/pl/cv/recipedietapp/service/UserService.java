@@ -4,7 +4,7 @@ import pl.cv.recipedietapp.entity.User;
 
 public interface UserService {
 
-    User findByUserName(String username);
+    User findByUsername(String username);
 
     void saveUser(User user);
 

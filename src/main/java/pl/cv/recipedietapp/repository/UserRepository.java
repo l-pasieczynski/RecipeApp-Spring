@@ -7,7 +7,6 @@ import pl.cv.recipedietapp.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    User findByUserName(String username);
+    User findByUsername(String username);
 
-    User findByUserId(long userId);
 }

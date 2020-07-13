@@ -13,7 +13,7 @@ public class User {
     private String username;
     @Column(nullable = false, unique = true, length = 40)
     private String email;
-    @Column(nullable = false, length = 30)
+    @Column(nullable = false)
     private String password;
     private boolean active;
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
