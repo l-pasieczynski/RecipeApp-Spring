@@ -5,8 +5,36 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/home")
+@RequestMapping("/")
 public class HomeController {
+
     @GetMapping
-    public String homestart(){return "home";}
+    public String home() {
+        return "home";
+    }
+
+    @GetMapping("register")
+    public String register() {
+        return "register";
+    }
+
+    @GetMapping("login")
+    public String login() {
+        return "login";
+    }
+
+    @GetMapping("about")
+    public String about() {
+        return "about";
+    }
+
+    @GetMapping("recipe")
+    public String recipe(){
+        return "recipe";
+    }
+
+    @GetMapping("contact")
+    public String contact() {
+        return "contact";
+    }
 }
