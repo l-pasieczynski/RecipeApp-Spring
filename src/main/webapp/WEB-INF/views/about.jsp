@@ -5,13 +5,6 @@
 
 <h1>Witaj</h1>
 
-<div>
-    <p>
-        Oto proste menu:
-        <%@ include file="parts/menu.jsp"%>
-    </p>
-</div>
-
 </body>
 
 <%@ include file="parts/footer.jsp"%>
