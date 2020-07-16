@@ -10,20 +10,24 @@ public class RecipePlan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "recipe_id")
-    private List<Recipe> recipeId = new ArrayList<>();
+    private Recipe recipeId;
     @Column(nullable = false, length = 100)
     private String mealName;
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "display_order")
-    private List<DayName> displayOrder = new ArrayList<>();
-    @OneToMany
+    private DayName displayOrder;
+    @ManyToOne
     @JoinColumn(name = "dayName_id")
-    private List<DayName> dayNameId = new ArrayList<>();
-    @OneToMany
+    private DayName dayNameId;
+    @ManyToOne
     @JoinColumn(name = "plan_id")
-    private List<Plan> planId = new ArrayList<>();
+    private Plan planId;
+
+//    @ManyToMany(cascade = CascadeType.ALL)
+//    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"),
+//            inverseJoinColumns = @JoinColumn(name = "role_id"))
 
     public RecipePlan() {
     }
@@ -37,11 +41,11 @@ public class RecipePlan {
         return this;
     }
 
-    public List<Recipe> getRecipeId() {
+    public Recipe getRecipeId() {
         return recipeId;
     }
 
-    public RecipePlan setRecipeId(List<Recipe> recipeId) {
+    public RecipePlan setRecipeId(Recipe recipeId) {
         this.recipeId = recipeId;
         return this;
     }
@@ -55,29 +59,29 @@ public class RecipePlan {
         return this;
     }
 
-    public List<DayName> getDisplayOrder() {
+    public DayName getDisplayOrder() {
         return displayOrder;
     }
 
-    public RecipePlan setDisplayOrder(List<DayName> displayOrder) {
+    public RecipePlan setDisplayOrder(DayName displayOrder) {
         this.displayOrder = displayOrder;
         return this;
     }
 
-    public List<DayName> getDayNameId() {
+    public DayName getDayNameId() {
         return dayNameId;
     }
 
-    public RecipePlan setDayNameId(List<DayName> dayNameId) {
+    public RecipePlan setDayNameId(DayName dayNameId) {
         this.dayNameId = dayNameId;
         return this;
     }
 
-    public List<Plan> getPlanId() {
+    public Plan getPlanId() {
         return planId;
     }
 
-    public RecipePlan setPlanId(List<Plan> planId) {
+    public RecipePlan setPlanId(Plan planId) {
         this.planId = planId;
         return this;
     }
