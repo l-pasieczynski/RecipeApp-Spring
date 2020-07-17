@@ -10,7 +10,8 @@ import pl.cv.recipedietapp.entity.User;
 public interface UserRepository extends JpaRepository<User, Long> {
 
     User findByUsername(String username);
-
+  
+    boolean isActive(String username);
+  
     User findByEmail(String email);
-
 }
