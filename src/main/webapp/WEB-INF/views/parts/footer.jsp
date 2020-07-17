@@ -1,5 +1,13 @@
 
-<%@ include file="socialMedia.jsp"%>
 
+<footer class="footer-section pt-3 pb-3">
+    <div class="container text-center">
+        <h5 class="text-light">Copyright <span class="footer-text-color">ZaplanujJedzonko.pl</span></h5>
+
+    </div>
+    <div class="fot-social-media">
+        <%@ include file="socialMedia.jsp"%>
+    </div>
+</footer>
 
 </html>

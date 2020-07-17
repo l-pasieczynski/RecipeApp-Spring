@@ -9,13 +9,13 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(nullable = false, length = 60)
+    @Column(nullable = false, unique = true, length = 60)
     private String username;
     @Column(nullable = false, unique = true, length = 40)
     private String email;
     @Column(nullable = false)
     private String password;
-    private boolean active;
+    private int enabled;
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
@@ -25,7 +25,7 @@ public class User {
     }
 
     public long getId() {
-        return id;
+        return this.id;
     }
 
     public User setId(long id) {
@@ -34,7 +34,7 @@ public class User {
     }
 
     public String getUsername() {
-        return username;
+        return this.username;
     }
 
     public User setUsername(String userName) {
@@ -60,12 +60,12 @@ public class User {
         return this;
     }
 
-    public boolean isActive() {
-        return active;
+    public int getEnabled() {
+        return enabled;
     }
 
-    public User setActive(boolean active) {
-        this.active = active;
+    public User setEnabled(int enabled) {
+        this.enabled = enabled;
         return this;
     }
 
