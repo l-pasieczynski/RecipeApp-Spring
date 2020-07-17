@@ -12,7 +12,7 @@
                         <input type="text" class="form-control" id="email" name="email" placeholder="podaj adres email">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="password" name="password" placeholder="podaj hasło">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="podaj hasło">
                     </div>
                     <button class="btn btn-color rounded-4" type="submit">Zaloguj</button>
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>

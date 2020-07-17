@@ -2,6 +2,7 @@ package pl.cv.recipedietapp.service;
 
 import org.springframework.stereotype.Service;
 import pl.cv.recipedietapp.entity.DayName;
+import pl.cv.recipedietapp.repository.DayNameRepository;
 
 @Service
 public class DayNameService {

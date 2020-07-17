@@ -1,6 +1,5 @@
 package pl.cv.recipedietapp.service;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.cv.recipedietapp.entity.Role;
 import pl.cv.recipedietapp.repository.RoleRepository;

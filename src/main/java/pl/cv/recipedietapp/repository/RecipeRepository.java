@@ -11,8 +11,8 @@ import java.util.List;
 @Repository
 public interface RecipeRepository extends JpaRepository<Recipe, Long> {
 
-    @Query(value = "SELECT rp FROM RecipePlan rp WHERE rp.recipeId = :recipeId")
-    List<Recipe> findRecipeInPlan(@Param("searchRecipe") long recipeId);
+//    @Query(value = "SELECT rp FROM RecipePlan rp WHERE rp.recipeId = :recipeId")
+//    List<Recipe> findRecipeInPlan(@Param("searchRecipe") long recipeId);
 
     @Query(value = "SELECT recipe FROM Recipe recipe WHERE recipe.name = :searchRecipe ORDER BY recipe.id ASC")
     List<Recipe> findRecipeByRecipeName(@Param("searchRecipe") String searchRecipe);

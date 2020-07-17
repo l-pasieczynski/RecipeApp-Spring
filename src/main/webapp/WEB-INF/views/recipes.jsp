@@ -3,7 +3,13 @@
 
 <body>
 
-<h1>Witaj</h1>
+<h1>Recipies</h1>
+
+<c:forEach items="${recipies}" var="recipies">
+    <div class="carousel-item">
+        ${recipies.name}
+    </div>
+</c:forEach>
 
 </body>
 

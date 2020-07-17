@@ -2,6 +2,7 @@ package pl.cv.recipedietapp.service;
 
 import org.springframework.stereotype.Service;
 import pl.cv.recipedietapp.entity.Plan;
+import pl.cv.recipedietapp.repository.PlanRepository;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
@@ -14,21 +15,21 @@ public class PlanService {
         this.planRepository = planRepository;
     }
 
-    public void deletePlan(Long planId) {
-        Plan plan = findById(planId);
-        planRepository.delete(planId);
-    }
-
-    public void deleteAllUserPlans(){
-        planRepository.deleteAll();
-    }
-
-    public Plan findByPlanId(Long planId) {
-        return planRepository.findById(planId);
-    }
-
-    public List<Plan> findAllUserPlans(Long userId) {
-        return planRepository.findAll(userId);
-    }
+//    public void deletePlan(Long planId) {
+//        Plan plan = findById(planId);
+//        planRepository.delete(planId);
+//    }
+//
+//    public void deleteAllUserPlans(){
+//        planRepository.deleteAll();
+//    }
+//
+//    public Plan findByPlanId(Long planId) {
+//        return planRepository.findById(planId);
+//    }
+//
+//    public List<Plan> findAllUserPlans(Long userId) {
+//        return planRepository.findAll(userId);
+//    }
 }
 

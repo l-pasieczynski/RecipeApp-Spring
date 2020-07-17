@@ -7,4 +7,5 @@ import pl.cv.recipedietapp.entity.DayName;
 @Repository
 public interface DayNameRepository extends JpaRepository<DayName, Integer> {
 
+    DayName findByName(String name);
 }
