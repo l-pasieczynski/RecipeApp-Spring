@@ -1,13 +1,13 @@
 package pl.cv.recipedietapp.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import pl.cv.recipedietapp.entity.Role;
 import pl.cv.recipedietapp.entity.User;
 import pl.cv.recipedietapp.repository.RoleRepository;
 import pl.cv.recipedietapp.repository.UserRepository;
+import pl.cv.recipedietapp.service.UserService;
+
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -19,22 +19,17 @@ public class UserServiceImpl implements UserService {
     private final RoleRepository roleRepository;
     private final BCryptPasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository, BCryptPasswordEncoder passwordEncoder) {
+    public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository,
+                           BCryptPasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
-        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
-    public User findByUsername(String username) {
+    public User findByUserName(String username) {
         return userRepository.findByUsername(username);
     }
-
-    @Override
-    public User findByEmail(String email) {
-        return userRepository.findByEmail(email);
-    }
-
     @Override
     public void saveUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));

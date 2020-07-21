@@ -1,16 +1,16 @@
 package pl.cv.recipedietapp.controller;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pl.cv.recipedietapp.entity.User;
 import pl.cv.recipedietapp.service.CurrentUser;
 import pl.cv.recipedietapp.service.UserService;
 
+
 @Controller
-@RequestMapping("/")
 public class UserController {
 
     private final UserService userService;
@@ -19,23 +19,20 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("create")
+    @GetMapping("/create-user")
     @ResponseBody
     public String createUser() {
         User user = new User();
-        user.setUsername("Lucas");
+        user.setUsername("admin");
         user.setPassword("admin");
-        user.setEmail("admin@admin.pl");
         userService.saveUser(user);
         return "admin";
     }
-
-    @GetMapping("admin")
+    @GetMapping("/admin")
     @ResponseBody
-    public String admin (@AuthenticationPrincipal CurrentUser currentUser){
-        User entityUser = currentUser.getUser();
-        return "Hello " + entityUser.getUsername();
+    public String admin(@AuthenticationPrincipal CurrentUser customUser) {
+        User entityUser = customUser.getUser();
+        return "dziala";
     }
-
 
 }

@@ -25,10 +25,7 @@ public class HomeController {
         return "register";
     }
 
-    @GetMapping("login")
-    public String login() {
-        return "login";
-    }
+
 
     @GetMapping("about")
     public String about() {
