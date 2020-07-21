@@ -2,16 +2,24 @@ package pl.cv.recipedietapp.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import pl.cv.recipedietapp.entity.User;
 import pl.cv.recipedietapp.repository.RecipeRepository;
+import pl.cv.recipedietapp.service.UserService;
 
 @Controller
 @RequestMapping("/")
 public class HomeController {
+    private final UserService userService;
     private final RecipeRepository recipeRepository;
 
-    public HomeController(RecipeRepository recipeRepository) {
+    public HomeController(UserService userService, RecipeRepository recipeRepository) {
+        this.userService = userService;
         this.recipeRepository = recipeRepository;
     }
 
@@ -21,9 +29,26 @@ public class HomeController {
     }
 
     @GetMapping("register")
-    public String register() {
+    public String register(Model m) {
+        m.addAttribute("user",new User());
         return "register";
     }
+
+    @PostMapping("register")
+    public String registerUser(@ModelAttribute("user") @Validated User user,
+                               BindingResult errors){
+
+        if (errors.hasErrors()){
+            return "/register";
+        }
+
+        userService.saveUser(user);
+
+        return "redirect:login";
+    }
+
+
+
 
 
 
