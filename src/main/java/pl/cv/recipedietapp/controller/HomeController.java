@@ -1,15 +1,14 @@
 package pl.cv.recipedietapp.controller;
 
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import pl.cv.recipedietapp.entity.User;
 import pl.cv.recipedietapp.repository.RecipeRepository;
+import pl.cv.recipedietapp.service.CurrentUser;
 import pl.cv.recipedietapp.service.UserService;
 
 @Controller
@@ -30,26 +29,20 @@ public class HomeController {
 
     @GetMapping("register")
     public String register(Model m) {
-        m.addAttribute("user",new User());
+        m.addAttribute("user", new User());
         return "register";
     }
 
     @PostMapping("register")
     public String registerUser(@ModelAttribute("user") @Validated User user,
-                               BindingResult errors){
+                               BindingResult errors) {
 
-        if (errors.hasErrors()){
+        if (errors.hasErrors()) {
             return "/register";
         }
-
         userService.saveUser(user);
-
         return "redirect:login";
     }
-
-
-
-
 
 
     @GetMapping("about")
@@ -58,7 +51,7 @@ public class HomeController {
     }
 
     @GetMapping("recipes")
-    public String recipes(Model model){
+    public String recipes(Model model) {
         model.addAttribute("recipies", recipeRepository.findAll());
         return "recipes";
     }
@@ -68,3 +61,10 @@ public class HomeController {
         return "contact";
     }
 }
+
+//    @GetMapping("/admin")
+//    @ResponseBody
+//    public String admin(@AuthenticationPrincipal CurrentUser customUser) {
+//        User entityUser = customUser.getUser();
+//        return "dziala";
+//    }
