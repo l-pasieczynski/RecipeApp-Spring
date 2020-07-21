@@ -7,14 +7,10 @@ import javax.persistence.Id;
 
 @Entity
 public class Role {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-
-    public Role() {
-    }
 
     public int getId() {
         return id;
