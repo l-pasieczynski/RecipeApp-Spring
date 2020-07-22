@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/app")
 public class AppController {
+
     @GetMapping("/home")
-    public String appStart(){
-        return "dash";
+    public String appStart() {
+        return "app/home";
     }
 }
+
