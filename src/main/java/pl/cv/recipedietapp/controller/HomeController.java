@@ -1,6 +1,5 @@
 package pl.cv.recipedietapp.controller;
 
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -8,7 +7,6 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import pl.cv.recipedietapp.entity.User;
 import pl.cv.recipedietapp.repository.RecipeRepository;
-import pl.cv.recipedietapp.service.CurrentUser;
 import pl.cv.recipedietapp.service.UserService;
 
 @Controller
@@ -54,6 +52,12 @@ public class HomeController {
     public String recipes(Model model) {
         model.addAttribute("recipies", recipeRepository.findAll());
         return "recipes";
+    }
+
+    @PostMapping("recipes")
+    public String searchedRecipies(@RequestParam String search, Model model) {
+        model.addAttribute("recipies", recipeRepository.findRecipeByRecipeName(search));
+        return "redirect:recipes";
     }
 
     @GetMapping("contact")

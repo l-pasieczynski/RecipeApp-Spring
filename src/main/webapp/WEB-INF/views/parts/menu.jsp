@@ -4,7 +4,7 @@
     </a>
     <ul class="nav nounderline text-uppercase">
         <li class="nav-item ml-4">
-            <a class="nav-link color-header" href="<c:url value="/app/home"/>">logowanie</a>
+            <a class="nav-link color-header" href="${pageContext.request.contextPath}/app/home">logowanie</a>
         </li>
         <li class="nav-item ml-4">
             <a class="nav-link color-header" href="register">rejestracja</a>
