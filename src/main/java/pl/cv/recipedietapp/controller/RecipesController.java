@@ -18,7 +18,7 @@ public class RecipesController {
     @GetMapping("/recipes")
     public String recipes(Model m){
         m.addAttribute("recipes",recipeRepository.findAll());
-        return "ap/recipes";
+        return "ap/recipe/recipes";
     }
 
 }

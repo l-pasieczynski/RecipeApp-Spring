@@ -1,10 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<%@include file="appParts/header.jsp"%>
+<%@include file="../appParts/header.jsp"%>
 
 <section class="dashboard-section">
     <div class="row dashboard-nowrap">
-        <%@include file="appParts/menu.jsp" %>
+        <%@include file="../appParts/menu.jsp" %>
 
 
         <div class="m-4 p-3 width-medium">
@@ -58,5 +58,5 @@
     </div>
 </section>
 
-<%@include file="appParts/footer.jsp"%>
+<%@include file="../appParts/footer.jsp"%>
 
