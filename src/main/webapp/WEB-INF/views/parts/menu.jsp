@@ -21,7 +21,7 @@
         <li class="nav-item ml-4">
             <sec:authorize access="isAuthenticated()">
         <li class="nav-item ml-4">
-            <a class="nav-link disabled" href="<c:url value="/ap/home"/>">Pulpit</a>
+            <a class="nav-link disabled" href="<c:url value="/app/home"/>">Pulpit</a>
         </li>
 
         <form action="<c:url value="/logout"/>" method="post">
