@@ -1,16 +1,15 @@
 package pl.cv.recipedietapp.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/app")
+@RequestMapping("/ap")
 public class AppController {
 
-    @GetMapping("/home")
+    @RequestMapping("/home")
     public String appStart() {
-        return "app/home";
+        return "ap/home";
     }
 }
 

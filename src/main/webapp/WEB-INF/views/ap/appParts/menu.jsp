@@ -16,7 +16,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="<c:url value="/app/recipes"/>">
+        <a class="nav-link" href="<c:url value="/ap/recipes"/>">
             <span>Przepisy</span>
             <i class="fas fa-angle-right"></i>
         </a>

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pl.cv.recipedietapp.repository.RecipeRepository;
 
 @Controller
-@RequestMapping("app")
+@RequestMapping("ap")
 public class RecipesController {
     RecipeRepository recipeRepository;
 
@@ -18,7 +18,7 @@ public class RecipesController {
     @GetMapping("/recipes")
     public String recipes(Model m){
         m.addAttribute("recipes",recipeRepository.findAll());
-        return "app/recipes";
+        return "ap/recipes";
     }
 
 }
