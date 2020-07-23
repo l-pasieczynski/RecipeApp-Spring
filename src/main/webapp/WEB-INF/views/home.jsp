@@ -169,7 +169,7 @@
         </div>
     </div>
 </section>
-<h1>to jest test</h1>
+
 </body>
 
 <%@ include file="parts/footer.jsp"%>
