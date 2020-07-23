@@ -4,7 +4,7 @@
     </a>
     <ul class="nav nounderline text-uppercase">
         <li class="nav-item ml-4">
-            <a class="nav-link color-header" href="${pageContext.request.contextPath}/app/home">logowanie</a>
+            <a class="nav-link color-header" href="<c:url value="/login"/>">logowanie</a>
         </li>
         <li class="nav-item ml-4">
             <a class="nav-link color-header" href="register">rejestracja</a>
@@ -18,18 +18,19 @@
         <li class="nav-item ml-4">
             <a class="nav-link disabled" href="contact">Kontakt</a>
         </li>
+        <li class="nav-item ml-4">
+            <sec:authorize access="isAuthenticated()">
+        <li class="nav-item ml-4">
+            <a class="nav-link disabled" href="<c:url value="/ap/home"/>">Pulpit</a>
+        </li>
+
+        <form action="<c:url value="/logout"/>" method="post">
+            <input id="logout"  class="btn btn-link nav-link color-header " type="submit" value="WYLOGUJ">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        </form>
+        </sec:authorize>
 
     </ul>
-    <div>
-    <ul class="nav nounderline text-uppercase">
-        <li class="nav-item ml-4">
-        <sec:authorize access="isAuthenticated()">
-            <form class="nav-link disabled" action="<c:url value="/logout"/>" method="post">
-                <input id="logout" class="nav-link disabled color-header" type="submit" value="Wyloguj">
-                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-            </form>
-        </sec:authorize>
-    </li>
-    </ul>
-    </div>
+
+
 </nav>

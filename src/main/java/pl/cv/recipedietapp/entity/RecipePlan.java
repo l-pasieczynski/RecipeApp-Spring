@@ -1,8 +1,6 @@
 package pl.cv.recipedietapp.entity;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 public class RecipePlan {

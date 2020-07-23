@@ -6,8 +6,6 @@ import pl.cv.recipedietapp.entity.Role;
 import pl.cv.recipedietapp.entity.User;
 import pl.cv.recipedietapp.repository.RoleRepository;
 import pl.cv.recipedietapp.repository.UserRepository;
-import pl.cv.recipedietapp.service.UserService;
-
 
 import java.util.Arrays;
 import java.util.HashSet;
