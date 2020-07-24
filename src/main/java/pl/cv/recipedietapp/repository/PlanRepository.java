@@ -17,5 +17,6 @@ public interface PlanRepository extends JpaRepository<Plan, Long> {
     @Query(nativeQuery = true, value = "SELECT * FROM plan WHERE plan.userId = :userId ORDER BY plan.created DESC LIMIT 1")
     Plan findUserLastAddedPlan(@Param("userId") long userId);
 
+
 }
 

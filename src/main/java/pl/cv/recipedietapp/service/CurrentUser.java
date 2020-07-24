@@ -14,4 +14,5 @@ public class CurrentUser extends User {
         this.user = user;
     }
     public pl.cv.recipedietapp.entity.User getUser() {return user;}
+
 }

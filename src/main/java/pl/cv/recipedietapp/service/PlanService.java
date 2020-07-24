@@ -15,21 +15,23 @@ public class PlanService {
         this.planRepository = planRepository;
     }
 
-//    public void deletePlan(Long planId) {
-//        Plan plan = findById(planId);
-//        planRepository.delete(planId);
-//    }
+
+    public void deletePlan(Long id) {
+        Plan plan = findById(id);
+        planRepository.delete(plan);
+    }
+
+    public void deleteAllUserPlans(){
+        planRepository.deleteAll();
+    }
+
+    public Plan findById(Long id) {
+        return planRepository.getOne(id);
+    }
+
+//    public List<Plan> findAllUserPlans() {
 //
-//    public void deleteAllUserPlans(){
-//        planRepository.deleteAll();
-//    }
-//
-//    public Plan findByPlanId(Long planId) {
-//        return planRepository.findById(planId);
-//    }
-//
-//    public List<Plan> findAllUserPlans(Long userId) {
-//        return planRepository.findAll(userId);
+//        return planRepository.findAllUserPLans(userId);
 //    }
 }
 
