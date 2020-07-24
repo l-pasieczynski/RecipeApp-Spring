@@ -10,7 +10,7 @@ public class Recipe {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     @Column(nullable = false, length = 100)
     private String name;
     @Column(nullable = false)
@@ -40,11 +40,11 @@ public class Recipe {
     public Recipe() {
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public Recipe setId(long id) {
+    public Recipe setId(Long id) {
         this.id = id;
         return this;
     }
