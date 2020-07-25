@@ -12,11 +12,11 @@
                 <div class="row border-bottom border-3 p-1 m-1">
                     <div class="col noPadding"><h3 class="color-header text-uppercase">Lista Przepisów</h3></div>
                     <div class="col noPadding d-flex justify-content-end mb-2">
-                        <a href="${pageContext.request.contextPath}/app"
+                        <a href="<c:url value="/app/home"/>"
                            class="btn btn-success rounded-4 pt-0 pb-0 pr-4 pl-4">Powrót do strony głównej</a>
                     </div>
                     <div class="col noPadding d-flex justify-content-end mb-2">
-                        <a href="${pageContext.request.contextPath}/app/recipe/add"
+                        <a href="<c:url value="/app/recipes/add"/>"
                            class="btn btn-success rounded-4 pt-0 pb-0 pr-4 pl-4">Dodaj nowy przepis</a>
                     </div>
                 </div>
@@ -42,11 +42,11 @@
                                     ${allRecipe.description}
                             </td>
                             <td class="col-2 d-flex align-items-center justify-content-center flex-wrap">
-                                <a href="${pageContext.request.contextPath}/app/recipe/delete?id=${allRecipe.id}"
+                                <a href="<c:url value="/app/recipes/delete/${allRecipe.id}"/>"
                                    class="btn btn-danger rounded-4 text-light m-1">Usuń</a>
-                                <a href="${pageContext.request.contextPath}/app/recipe/details?id=${allRecipe.id}"
+                                <a href="<c:url value="/app/recipes/details/${allRecipe.id}"/>"
                                    class="btn btn-info rounded-4 text-light m-1">Szczegóły</a>
-                                <a href="${pageContext.request.contextPath}/app/edit/recipe?id=${allRecipe.id}"
+                                <a href="<c:url value="/app/recipes/edit/${allRecipe.id}"/>"
                                    class="btn btn-warning rounded-4 text-light m-1">Edytuj</a>
                             </td>
                         </tr>

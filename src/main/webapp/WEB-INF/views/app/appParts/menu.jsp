@@ -10,7 +10,7 @@
         </li>
     </sec:authorize>
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="<c:url value="/app/home"/>">
             <span>Pulpit</span>
             <i class="fas fa-angle-right"></i>
         </a>
