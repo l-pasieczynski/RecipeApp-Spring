@@ -16,7 +16,7 @@
                         <form:input type="text" class="form-control" id="email" path="email" placeholder="podaj email"/>
                     </div>
                     <div class="form-group">
-                        <form:input type="text" class="form-control" id="password" path="password" placeholder="podaj hasło"/>
+                        <form:input type="password" class="form-control" id="password" path="password" placeholder="podaj hasło"/>
                     </div>
 
                     <button class="btn btn-color rounded-4" type="submit">Zarejestruj</button>

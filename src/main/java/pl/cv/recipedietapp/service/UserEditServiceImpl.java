@@ -1,6 +1,5 @@
 package pl.cv.recipedietapp.service;
 
-import org.springframework.context.annotation.Primary;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import pl.cv.recipedietapp.entity.Role;
@@ -12,15 +11,14 @@ import java.util.Arrays;
 import java.util.HashSet;
 
 @Service
-@Primary
-public class UserServiceImpl implements UserService {
+public class UserEditServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
     private final BCryptPasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository,
-                           BCryptPasswordEncoder passwordEncoder) {
+    public UserEditServiceImpl(UserRepository userRepository, RoleRepository roleRepository,
+                               BCryptPasswordEncoder passwordEncoder) {
         this.passwordEncoder = passwordEncoder;
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
@@ -32,7 +30,6 @@ public class UserServiceImpl implements UserService {
     }
     @Override
     public void saveUser(User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setEnabled(1);
         Role userRole = roleRepository.findByName("ROLE_USER");
         user.setRoles(new HashSet<Role>(Arrays.asList(userRole)));
