@@ -21,17 +21,17 @@
                         <tr class="d-flex">
                             <th scope="row" class="col-2">Nazwa Przepisu</th>
                             <td class="col-7">
-                                ${recipe.getName()}
+                                ${recipe.name}
                             </td>
                         </tr>
                         <tr class="d-flex">
                             <th scope="row" class="col-2">Opis przepisu</th>
-                            <td class="col-7">${recipe.getDescription()}</td>
+                            <td class="col-7">${recipe.description}</td>
                         </tr>
                         <tr class="d-flex">
                             <th scope="row" class="col-2">Przygotowanie (minuty)</th>
                             <td class="col-7">
-                                ${recipe.getPreparationTime()}
+                                ${recipe.preparationTime}
                             </td>
                         </tr>
                         </tbody>
@@ -45,11 +45,11 @@
                     </div>
                     <div class="row d-flex">
                         <div class="col-5 p-4">
-                            <p>${recipe.getPreparation()}</p>
+                            <p>${recipe.preparation}</p>
                         </div>
                         <div class="col-2"></div>
                         <ul class="col-5 p-4 list-unstyled">
-                            <c:forEach items="${recipe.getIngredients()}" var="ingredient">
+                            <c:forEach items="${recipe.ingredients}" var="ingredient">
                                 <li>${ingredient}</li>
                             </c:forEach>
                         </ul>

@@ -34,17 +34,18 @@ public class RecipesController {
     }
 
     @GetMapping("/recipes/delete/{id}")
-    public String delete() {
+    public String delete(Model model) {
+        String decision = "";
+        model.addAttribute("decision", decision);
         return "app/recipe/recipeDelete";
     }
 
     @PostMapping("/recipes/delete/{id}")
-    public String deletePost(@PathVariable Long id, @RequestParam String decision) {
+    public String deletePost(@PathVariable Long id, @ModelAttribute("decision") String decision) {
         if (decision.equals("OK")) {
             recipeService.deleteRecipe(id);
-            return "app/recipe/recipes";
         }
-        return "app/recipe/recipes";
+        return "redirect:../";
     }
 
     @GetMapping("/recipes/details/{id}")
