@@ -12,10 +12,14 @@ import java.util.List;
 public interface PlanRepository extends JpaRepository<Plan, Long> {
 
     @Query(value = "SELECT plan FROM Plan plan WHERE plan.userId = :userId ORDER BY plan.created DESC")
-    List<Plan> findAllUserPLans(@Param("userId") long userId);
+    List<Plan> findAllUserPlans(@Param("userId") Long userId);
+
+    List<Plan> findAllByUserIdOrderByCreatedDesc(@Param("userId")Long id);
+
+    Plan findFirstByUserIdOrderByCreated(Long id);
 
     @Query(nativeQuery = true, value = "SELECT * FROM plan WHERE plan.userId = :userId ORDER BY plan.created DESC LIMIT 1")
-    Plan findUserLastAddedPlan(@Param("userId") long userId);
+    Plan findUserLastAddedPlan(@Param("userId") Long userId);
 
 
 }

@@ -32,9 +32,9 @@
                                     <tbody class="text-color-lighter">
                                     <c:forEach items="${plan}" var="plan">
                                         <tr class="d-flex">
-                                            <th scope="row" class="col-1">${plan.getId()}</th>
-                                            <td class="col-2"> ${plan.getName()} </td>
-                                            <td class="col-7"> ${plan.getDescription()} </td>
+                                            <th scope="row" class="col-1">${plan.id}</th>
+                                            <td class="col-2"> ${plan.name} </td>
+                                            <td class="col-7"> ${plan.description} </td>
                                             <td class="col-2 d-flex align-items-center justify-content-center flex-wrap">
                                                 <a href="<c:url value="/app/plan/delete/${plan.id}"/>"
                                                    class="btn btn-danger rounded-0 text-light m-1">Usuń</a>

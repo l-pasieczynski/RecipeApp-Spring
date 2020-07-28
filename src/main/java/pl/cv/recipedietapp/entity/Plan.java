@@ -10,7 +10,7 @@ public class Plan {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     @Column(nullable = false, length = 100)
     private String name;
     @Column(nullable = false, length = 1000)
@@ -21,6 +21,7 @@ public class Plan {
             inverseJoinColumns = @JoinColumn(name = "plan_id"))
     private List<User> userId = new ArrayList<>();
 
+
     @PrePersist
     public void prePersist() {
         created = LocalDateTime.now();
@@ -29,11 +30,11 @@ public class Plan {
     public Plan() {
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public Plan setId(long id) {
+    public Plan setId(Long id) {
         this.id = id;
         return this;
     }
