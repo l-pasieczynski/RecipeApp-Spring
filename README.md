@@ -18,8 +18,10 @@ Project was made in free time to learn Spring Boot and Spring Security before st
 Soon
 
 ## Technologies
+* Java
 * Spring Boot
 * Spring Security
+* Spring Data JPA
 * ORM - hibernate
 * JavaServer Pages (JSP)
 
