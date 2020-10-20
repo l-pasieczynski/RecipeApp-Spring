@@ -11,7 +11,7 @@ Project was made to learn Spring Boot and Spring Security.
 * [Status](#status)
 
 ## General info
-Pair Programming with Krzysztof Dyrkacz: https://github.com/KrzysiekDyrkacz
+Pair Programming with Krzysztof Dyrkacz: https://github.com/KrzysiekDyrkacz through WebAppTeam2020 Repository. </br>
 Project was made in free time to learn Spring Boot and Spring Security before starting SurveyApp Project. 
 
 ## Screenshots
