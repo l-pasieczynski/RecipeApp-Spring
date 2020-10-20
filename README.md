@@ -24,12 +24,16 @@ Project was made in free time to learn Spring Boot and Spring Security before st
 * Java
 * Spring Boot
 * Spring Security
-* Spring Data JPA
-* ORM - hibernate
+* Spring JPA (Hibernate)
 * JavaServer Pages (JSP)
 
 ## Setup
-* Download files
+Prerequisites
+* Java 8 or above
+* Maven
+* IDE IntelliJ
+
+* Clone this repo in local machine
 * Start app in IDE, browser should open automaticly on landing page
 
 ## Features
