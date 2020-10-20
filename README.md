@@ -15,7 +15,10 @@ Pair Programming with Krzysztof Dyrkacz: https://github.com/KrzysiekDyrkacz thro
 Project was made in free time to learn Spring Boot and Spring Security before starting SurveyApp Project. 
 
 ## Screenshots
-Soon
+![Database model](./img/ModelDB.png)
+![App dashboard](./img/dashboard.png)
+![Recipe edit](./img/recipe.png)
+![Users list](./img/users.png)
 
 ## Technologies
 * Java
